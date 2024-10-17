@@ -1,7 +1,7 @@
-package com.f4.fqs.queue.kafka.producer;
+package com.f4.fqs.commons.kafka.producer;
 
-import com.f4.fqs.commons.domain.message.QueueCommand;
-import com.f4.fqs.commons.domain.util.CommonConstraints;
+import com.f4.fqs.commons.kafka_common.message.QueueCommand;
+import com.f4.fqs.commons.kafka_common.util.CommonConstraints;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

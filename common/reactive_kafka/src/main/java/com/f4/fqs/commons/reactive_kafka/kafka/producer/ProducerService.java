@@ -1,6 +1,6 @@
-package com.f4.fqs.queue.kafka.producer;
+package com.f4.fqs.commons.reactive_kafka.kafka.producer;
 
-import com.f4.fqs.commons.domain.message.QueueCommand;
+import com.f4.fqs.commons.kafka_common.message.QueueCommand;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 public interface ProducerService {

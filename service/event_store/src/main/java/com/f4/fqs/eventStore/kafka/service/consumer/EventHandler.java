@@ -1,9 +1,7 @@
 package com.f4.fqs.eventStore.kafka.service.consumer;
 
-import com.f4.fqs.commons.domain.message.QueueCommand;
+import com.f4.fqs.commons.kafka_common.message.QueueCommand;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Slf4j

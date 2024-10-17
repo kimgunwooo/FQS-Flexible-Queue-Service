@@ -1,14 +1,10 @@
 package com.f4.fqs.queue.redis.service;
 
 import com.f4.fqs.commons.domain.exception.BusinessException;
-import com.f4.fqs.commons.domain.util.CommonConstraints;
 import com.f4.fqs.commons.domain.util.ParsingUtil;
 import com.f4.fqs.queue.presentation.exception.QueueErrorCode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +13,8 @@ import java.time.ZoneOffset;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static com.f4.fqs.commons.domain.util.CommonConstraints.*;
+import static com.f4.fqs.commons.domain.util.CommonConstraints.QUEUE_NAME;
+
 
 @Service
 @RequiredArgsConstructor

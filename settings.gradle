@@ -15,3 +15,6 @@ include 'service:payment'
 include 'service:event_store'
 
 include 'common:domain'
+include 'common:kafka'
+include 'common:reactive_kafka'
+include 'common:kafka_common'

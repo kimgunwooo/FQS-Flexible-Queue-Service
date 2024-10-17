@@ -1,6 +1,5 @@
-package com.f4.fqs.commons.domain.message;
+package com.f4.fqs.commons.kafka_common.message;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.io.Serializable;

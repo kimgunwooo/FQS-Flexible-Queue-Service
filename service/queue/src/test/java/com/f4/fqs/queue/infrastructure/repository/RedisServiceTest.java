@@ -1,13 +1,11 @@
 package com.f4.fqs.queue.infrastructure.repository;
 
-import com.f4.fqs.commons.domain.util.ParsingUtil;
 import com.f4.fqs.queue.redis.service.RedisService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.IntStream;

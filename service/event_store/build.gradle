@@ -9,6 +9,7 @@ ext {
 
 dependencies {
 	implementation project(':common:domain')
+	implementation project(':common:kafka_common')
 
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
