@@ -1,5 +1,6 @@
-package com.f4.fqs.payment;
+package com.f4.fqs.payment.dto;
 
+import com.f4.fqs.payment.domain.Amount;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

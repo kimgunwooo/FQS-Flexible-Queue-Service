@@ -1,4 +1,4 @@
-package com.f4.fqs.payment;
+package com.f4.fqs.payment.dto;
 
 import lombok.Getter;
 import lombok.Setter;
