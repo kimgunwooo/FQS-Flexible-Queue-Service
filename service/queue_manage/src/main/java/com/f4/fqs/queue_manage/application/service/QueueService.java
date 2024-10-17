@@ -11,7 +11,6 @@ import com.f4.fqs.queue_manage.infrastructure.docker.DockerService;
 import com.f4.fqs.queue_manage.infrastructure.repository.QueueRepository;
 import com.f4.fqs.queue_manage.presentation.request.CreateQueueRequest;
 import com.f4.fqs.queue_manage.presentation.request.UpdateExpirationTimeRequest;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,7 +35,6 @@ import static com.f4.fqs.queue_manage.presentation.exception.QueueErrorCode.*;
 public class QueueService {
 
     private final QueueRepository queueRepository;
-    private final ObjectMapper objectMapper;
     private final RedisTemplate<String, Object> redisTemplate;
     private final RedisTemplate<String, ApiRoute> redisRouteTemplate;
     private final DockerService dockerService;
@@ -79,16 +77,7 @@ public class QueueService {
     }
 
     private void saveQueueInfoToRedis(String secretKey, Queue queue) {
-        String json = serializeQueueToJson(queue);
-        redisTemplate.opsForSet().add(secretKey, json);
-    }
-
-    private String serializeQueueToJson(Object obj) {
-        try {
-            return objectMapper.writeValueAsString(obj);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to serialize queue to JSON", e);
-        }
+        redisTemplate.opsForSet().add(secretKey, queue.getName());
     }
 
     private void addApiRoute(Queue savedQueue) {
@@ -169,4 +158,7 @@ public class QueueService {
         }
     }
 
+    public Boolean validateSecretKeyAndQueueName(String secretKey, String queueName) {
+        return Boolean.TRUE.equals(redisTemplate.opsForSet().isMember(secretKey, queueName));
+    }
 }

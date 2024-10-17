@@ -69,4 +69,11 @@ public class QueueController {
 
         return ResponseEntity.ok(createSuccessResponse(queueService.closeQueue(queueId, userId)));
     }
+
+    @GetMapping("/validate")
+    public ResponseEntity<Boolean> validateSecretKeyAndQueueName(
+            @RequestHeader("X-Secret-Key") String secretKey,
+            @RequestParam String queueName) {
+        return ResponseEntity.ok(queueService.validateSecretKeyAndQueueName(secretKey, queueName));
+    }
 }
